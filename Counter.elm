@@ -11,3 +11,5 @@ counter = foldp increment 0 Mouse.clicks
 
 main : Signal Element
 main = lift asText counter
+
+-- Questions?

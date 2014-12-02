@@ -10,11 +10,11 @@ presControl : Input PresControl
 presControl = input Top
 
 goto : PresControl -> Int -> Int
-goto control page = 
+goto control curpage = 
   case control of
     Top -> 0
-    Prev -> page - 1
-    Next -> page + 1
+    Prev -> curpage - 1
+    Next -> curpage + 1
     Last -> length content - 1
 
 header : Int -> Element
@@ -40,6 +40,8 @@ currentPage = foldp goto 0 presControl.signal
 main : Signal Element
 main = lift display currentPage
 
+-- Questions?
+
 {- Content goes here -}
 
 content : [[String]]
@@ -53,7 +55,7 @@ content = [
   ["Types and Values","- Data","- Records","Live Code: Model the Cat!"],
   ["Graphics"],
   ["Graphics","- The 'Element' Type","- Understood by the graphic runtime","- Declarative","- Constructive","Live Code: Broken Clock"],
-  ["Graphics Further Examples","WebGL","-  https://evancz.github.io/first-person-elm/","Virtual DOM","- https://github.com/rtfeldman/dreamwriter","- https://dreamwriter.io/"],
+  ["Graphics Further Examples","WebGL","- https://github.com/evancz/first-person-elm","-  https://evancz.github.io/first-person-elm/","Virtual DOM","- https://github.com/rtfeldman/dreamwriter","- https://dreamwriter.io/"],
   ["Reactive"],
   ["Reactive","- The 'Signal' Type","- Values that change over time","- Program against the current value"],
   ["Mouse.position : Signal (Int,Int)"],
@@ -64,5 +66,9 @@ content = [
   ["Live Code: Follow the mouse"],
   ["Reactive","Remembering State"],
   ["Signal.foldp : (a -> b -> b) -> b -> Signal a -> Signal b"],
-  ["Live Code: Counter"]
+  ["Live Code: Counter"],
+  ["Reactive","Native Inputs","- The 'Input' and 'Handle' Types"],
+  ["Graphics.Input.input : a -> Input a","Graphics.Input.button : Handle a -> a -> String -> Element"],
+  ["Live Code: I N C E P T I O N"],
+  ["Live Code: 'Mechanical' Turing Machine"]
   ]

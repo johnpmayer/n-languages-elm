@@ -14,3 +14,5 @@ type Cat = { name : String, furColor : FurColor }
 tom = { name = "Tom", furColor = Grey }
 
 main = asText tom
+
+-- Questions?

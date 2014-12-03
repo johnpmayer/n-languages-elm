@@ -15,6 +15,6 @@ fib n = case n of
 {- Some 'magic' to display the result -}
 
 main : Element
-main = asText (fib 10)
+main = asText (fib 100)
 
 -- Questions?

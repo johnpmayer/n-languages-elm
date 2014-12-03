@@ -29,7 +29,7 @@ header page = flow right [
 display : Int -> Element
 display page = flow down [
   header page,
-  container 700 500 middle <| flow down <| map (centered << Text.height 24 << toText) <| case drop page content of
+  container 700 500 middle <| flow down <| map (centered << Text.height 32 << toText) <| case drop page content of
     [] -> ["End of presentation"]
     (slide::_) -> slide
   ]
@@ -70,5 +70,6 @@ content = [
   ["Reactive","Native Inputs","- The 'Input' and 'Handle' Types"],
   ["Graphics.Input.input : a -> Input a","Graphics.Input.button : Handle a -> a -> String -> Element"],
   ["Live Code: I N C E P T I O N"],
+  ["Interop","Ports"],
   ["Live Code: 'Mechanical' Turing Machine"]
   ]
